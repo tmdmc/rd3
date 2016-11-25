@@ -57,7 +57,7 @@ module.exports = React.createClass({
           strokeWidth={series.strokeWidth}
           strokeDashArray={series.strokeDashArray}
           seriesName={series.name}
-          key={idx}
+          key={series.key || idx}
         />
       )
     );
@@ -79,7 +79,7 @@ module.exports = React.createClass({
 
       return (
         <VoronoiCircleContainer
-          key={idx}
+          key={vnode.point.d.key || idx}
           circleFill={circleFill}
           vnode={vnode}
           hoverAnimation={props.hoverAnimation}
@@ -97,8 +97,8 @@ module.exports = React.createClass({
 
     return (
       <g>
-        <g>{regions}</g>
-        <g>{lines}</g>
+        <g className="rd3-linechart-ds-points">{regions}</g>
+        <g className="rd3-linechart-ds-lines">{lines}</g>
       </g>
     );
   },
