@@ -34,7 +34,10 @@ module.exports = {
     });
   },
 
-  onMouseOver(x, y, dataPoint) {
+  onMouseOver: function onMouseOver(x, y, dataPoint, vnode) {
+    if (this.props.onMouseOver) {
+      this.props.onMouseOver(x, y, dataPoint, vnode);
+    }
     if (!this.props.showTooltip) {
       return;
     }

@@ -33,7 +33,7 @@ module.exports = React.createClass({
 
   _animateCircle() {
     const rect = findDOMNode(this).getElementsByTagName('circle')[0].getBoundingClientRect();
-    this.props.onMouseOver.call(this, rect.right, rect.top, this.props.dataPoint);
+    this.props.onMouseOver.call(this, rect.right, rect.top, this.props.dataPoint, this.props.vnode);
     this.setState({
       circleRadius: this.props.circleRadius * (5 / 4),
       circleFill: shade(this.props.circleFill, 0.2),
