@@ -58,6 +58,7 @@ module.exports = React.createClass({
           strokeDashArray={series.strokeDashArray}
           seriesName={series.name}
           key={series.key || idx}
+          className={props.highlightSeries == series.name ? 'highlight' : ''}
         />
       )
     );

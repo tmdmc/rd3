@@ -149,6 +149,7 @@ module.exports = React.createClass({
               width={innerWidth}
               height={innerHeight}
               onMouseOver={this.onMouseOver}
+              highlightSeries={props.highlightSeries}
             />
           </g>
         </Chart>
